@@ -9,8 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "@hookform/resolvers": "^5.1.1",
+    "axios": "^1.10.0",
+    "next": "15.3.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.60.0",
+    "react-query": "^3.39.3",
+    "react18-input-otp": "^1.1.4",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.2"
   }
 }
