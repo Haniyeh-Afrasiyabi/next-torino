@@ -6,6 +6,7 @@ import React, { useContext } from "react";
 import styles from "../modules/LoginModal.module.css";
 import { LoginContext } from "./Header";
 import Close from "../icons/Close";
+import { login } from "@/services/config";
 
 function LoginModal() {
   const { state, dispatch } = useContext(LoginContext);
@@ -21,7 +22,34 @@ function LoginModal() {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const payload = {
+      mobile: data.number,
+    };
+    console.log(payload);
+
+    try {
+      const result = await login(payload);
+      console.log(result);
+
+      // toast.success("ثبت‌نام با موفقیت انجام شد!");
+
+      // localStorage.setItem("token", result.token);
+      // localStorage.setItem("username", payload.username);
+      // router.push("/dashboard");
+    } catch (error) {
+      // const status = error.response?.status;
+      console.log("خطای کامل:", error.response);
+
+      // if (status === 409) {
+      //   toast.error("این نام کاربری قبلاً ثبت شده است");
+      // } else if (status === 400) {
+      //   toast.error("اطلاعات وارد شده معتبر نیست");
+      // } else {
+      //   toast.error("مشکلی در ثبت‌نام رخ داده است");
+      // }
+    }
+  };
 
   return (
     <div
