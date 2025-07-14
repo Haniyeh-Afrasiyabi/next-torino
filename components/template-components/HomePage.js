@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import LoginModal from "../modules/LoginModal";
 
 function HomePage() {
   return (
-    <div>HomePage</div>
-  )
+    <div>
+      <h1>HomePage</h1>
+      {/* <LoginModal /> */}
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
