@@ -6,3 +6,8 @@ export const login = async (data) => {
   const response = await axios.post(`${API_BASE_URL}/auth/send-otp`, data);
   return response.data;
 };
+
+export const checkOtp  = async (data) => {
+  const response = await axios.post(`${API_BASE_URL}/auth/check-otp`, data);
+  return response.data;
+};

@@ -7,6 +7,7 @@ import styles from "../modules/LoginModal.module.css";
 import { LoginContext } from "./Header";
 import Close from "../icons/Close";
 import { login } from "@/services/config";
+import { toast } from "react-toastify";
 
 function LoginModal() {
   const { state, dispatch } = useContext(LoginContext);
@@ -30,6 +31,11 @@ function LoginModal() {
 
     try {
       const result = await login(payload);
+      console.log(result);
+
+      dispatch({ type: "CloseLoginModal" });
+      dispatch({ type: "ShowLoginCodeModal", payload: data.number });
+      toast.success(`کد تایید: ${result.code}`);
       console.log(result);
 
       // toast.success("ثبت‌نام با موفقیت انجام شد!");
